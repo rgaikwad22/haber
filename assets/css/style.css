@@ -1,0 +1,1359 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------
+  [Table of contents]
+  * To keep an overview of structure of your code, we make use of table of 
+  * content. Table of content is use display the overall tree structure of your
+  * Layout. 
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following table of content and add your own as this is just and 
+  * example to let you know)
+
+  1. CSS Reset Code
+    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+    1.2. Clear Fix
+    1.3. Font class declaration
+  2. Body
+  3. Header / .header
+    2.1. Navigation / .navbar
+  4. Content / .content
+    4.1. Left column / .leftcolumn
+    4.2. Right column / .rightcolumn
+    4.3. Sidebar / .sidebar
+      4.3.1. RSS / .rss
+      4.3.2. Search / .search
+      4.3.3. Boxes / .box
+      4.3.4. Sideblog / .sideblog
+      4.3.5. Advertisements / .ads
+  5. Footer / .footer
+  ------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Color codes]
+  * Mention the color code you have used in your html document for the respective
+  * elements given as follow. 
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following color code and add your own as this is just and 
+  * example to let you know)
+
+  Header nav: #e5e5df (Cararra)
+  Header nav a (hover): #fff (white)
+  Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Typography]
+  * Mention the Typography you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following typography and add your own as this is just and 
+  * example to let you know)
+
+  Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  -------------------------------------------------------------------*/
+
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Force scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em {
+  font-style: italic;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup {
+  top: -.7em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+/* 1.2. Clear Fix
+   ========================================================================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  zoom: 1;
+}
+
+/* 1.3. Font class declaration
+   ========================================================================== */
+/*
+ * Mention the font property (eg: font-family, font-size, font-weight, font-style
+ * etc) that have been commonly used in the html document. Make a class of it and
+ * apply to the element wherever it is needed. If any single property in changed,
+ * then override only that property in the particular class which is used for the
+ * element.
+ * (NOTE: Remove this commented code once you start 
+ * developing the code. Remove the following font class and add your own
+ * as this is just and example to let you know. If there is only one font family
+ * followed throughout the site, then menstion the font property in body. No need
+ * of creating an extra class for it) */
+
+.futura-bold-font {
+  font-family: 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/*for all*/
+body {
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+a { text-decoration: none; }
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  position: relative;
+  color: #D8DAE2;
+  text-indent: -9999px;
+}
+
+.icon::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #D8DAE2;
+  font-family: "FontAwesome";
+  text-indent: 0;
+}
+
+/*for wrapper*/
+.wrapper {
+  width: 93%;
+  max-width: 1255px;
+  margin: 0 auto;
+}
+
+/*=================================
+  Header styling starts here
+=================================*/
+
+.header-container img { width: 100%; }
+
+.header-container {
+  background-color: #3E4851;
+  color: #fff;
+}
+
+.header-container .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar { flex-basis: 51%; }
+.hamberger-icon { display: none; }
+
+.header-nav-links {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: space-between;
+}
+
+.header-nav-links a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.about-dropdown-list { display: none; }
+
+.flex li a { color: #fff; }
+.active a { color: #DC6226; }
+
+.twitter::before {
+  color: #808C94;
+  font-size: 24px;
+  content: "\f081";
+}
+
+.youtube::before {
+  color: #808C94;
+  content: "\f431";
+  font-size: 24px;
+}
+
+.rfi::before {
+  color: #808C94;
+  font-size: 24px;
+  content: "\e012";
+}
+
+.facebook::before {
+  color: #808C94;
+  font-size: 24px;
+  content: "\f082";
+}
+
+.google-plus::before {
+  color: #808C94;
+  font-size: 24px;
+  content: "\f0d4";
+}
+
+.flex li:not(:last-child) { margin-right: 10px; }
+
+.about-list a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.down-arrow::after {
+  color: #DC6226;
+  font-size: 12px;
+  font-family: "FontAwesome";
+  content: "\f0d7";
+}
+
+/*=================================
+  Header styling ends here
+=================================*/
+
+
+/*=================================
+  banner styling starts here
+=================================*/
+
+.banner-section .wrapper {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.banner-text li:not(:first-child) { display: none; }
+
+.banner-text { min-height: 50%; }
+
+.active-slide {
+  width: 100vw;
+  display: block;
+  z-index: -1;
+  left: 0;
+}
+
+.active-slide img { width: 100%; }
+
+
+.banner-detail {
+  width: 1056px;
+  max-width: 50%;
+  padding: 25px 80px;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  left: 0;
+  background-color: #dc6227;
+  color: #fff;
+  text-align: center;
+  transform: translateY(-100%);
+}
+
+.prev::before {
+  color: #fff;
+  font-size: 28px;
+  content: "\f053";
+}
+
+.prev {
+  width: 28px;
+  height: 28px;
+  border: none;
+  display: inline-block;
+  position: absolute;
+  left: 27%;
+  top: -45px;
+  background: none;
+}
+
+.nxt::before {
+  color: #fff;
+  font-size: 28px;
+  content: "\f054";
+}
+
+.nxt {
+  width: 28px;
+  height: 28px;
+  border: none;
+  display: inline-block;
+  position: absolute;
+  right: 26.5%;
+  top: -45px;
+  background: none;
+}
+
+.banner-detail h1 {
+  font-size: 29px;
+  font-weight: 700;
+}
+
+.arrows {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  text-indent: -999999px;
+  text-align: center;
+  transform: translateY(-18px);
+}
+
+/*=================================
+  banner styling ends here
+=================================*/
+
+/*=================================
+  home styling ends here
+=================================*/
+
+.home-section { padding: 70px 0; }
+
+.home-section h2 {
+  margin-bottom: 45px;
+  color: #414B52;
+  font-size: 34px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.tips-description h3 a {
+  width: 99%;
+  margin-bottom: 25px;
+  display: block;
+  color: #414B52;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+}
+
+.home-section p {
+  width: 80%;
+  margin-bottom: 25px;
+  color: #A29BA1;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+}
+
+.tips-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tips-description li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 30%;
+}
+
+.icon-background {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  background-color: #DC6226;
+}
+
+.card::before {
+  padding: 19px;
+  color: #fff;
+  font-size: 24px;
+  content: "\f09d";
+}
+
+.graph::before {
+  padding: 19px;
+  color: #fff;
+  font-size: 24px;
+  content: "\e0e3";
+}
+
+.money-bag::before {
+  padding: 19px;
+  color: #fff;
+  font-size: 24px;
+  content: "\f81d";
+}
+
+.money-saving::before {
+  padding: 19px;
+  color: #fff;
+  font-size: 24px;
+  content: "\f4b9";
+}
+
+.read-more {
+  padding: 13px;
+  border: 1px solid grey;
+  color: #414B52;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/*=================================
+  home styling ends here
+=================================*/
+
+/*=================================
+  service styling start here
+=================================*/
+
+.services-section {
+  padding: 80px 0;
+  background-color: #EAEEF4;
+}
+
+.services-section h2 {
+  margin-bottom: 45px;
+  color: #404B52;
+  font-size: 34px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.service-top p {
+  margin-bottom: 25px;
+  color: #404B52;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+}
+
+.service-bottom { display: flex; }
+.service-bottom a { display: inline-block; }
+
+.service-article {
+  padding: 15px 13px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 50%;
+  background-color: #fff;
+}
+
+.service-bottom .service-article:not(:last-child) { margin-right: 30px; }
+.service-article img { width: 100%; }
+.service-article h3 { margin-top: 30px; }
+
+.service-article h3 a {
+  font-size: 26px;
+  font-weight: 700;
+  color: #DC6226;
+}
+
+.service-article p {
+  padding: 10px 30px 15px;
+  color: #A29BA1;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+}
+
+.more-icon::before {
+  color: #404B52;
+  font-size: 22px;
+  font-family: "FontAwesome";
+  content: "\f0a9";
+}
+
+/*=================================
+  service styling ends here
+=================================*/
+
+/*=================================
+  investment styling starts here
+=================================*/
+
+.investment-section { background: linear-gradient(to Right, #DB6326 50%, #414A53 50%); }
+
+.d-flex {
+  padding: 50px 0;
+  display: flex;
+}
+
+.fresh-investment h3,
+.save-money h3 {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.investment-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.fresh-investment { width: 50%; }
+
+.save-money {
+  padding-left: 90px;
+  width: 50%;
+}
+
+.gear-icon::before {
+  margin-right: 10px;
+  color: #fff;
+  font-size: 13px;
+  font-family: "FontAwesome";
+  content: "\f013";
+}
+
+.gear-icon {
+  width: 80%;
+  color: #fff;
+  font-weight: 700;
+}
+
+.investment-list li:not(:last-child) { margin-bottom: 20px; }
+.investment-list li:first-child { line-height: 30px; }
+
+.read-learn-border {
+  padding: 12px;
+  border: 2px solid #fff;
+  margin-top: 40px;
+  display: inline-block;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.save-money p {
+  margin-top: 20px;
+  color: #fff;
+  font-weight: 700;
+}
+
+/*=================================
+  investment styling ends here
+=================================*/
+
+/*=================================
+  clients styling starts here
+=================================*/
+
+.clients-section {
+  padding: 50px 0;
+  position: relative;
+}
+
+.clients-logo {
+  display: flex;
+  text-align: center;
+}
+
+.clients-logo img { width: 100%; }
+.clients-logo li { flex-basis: 50% }
+.clients-logo li:not(:last-child) { margin-right: 20px; }
+
+.previous-next {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 40%;
+  left: 5px;
+  right: 0;
+}
+
+.previous::before {
+  color: #000000;
+  font-size: 30px;
+  content: "\f104";
+}
+
+.next::before {
+  color: #000000;
+  font-size: 30px;
+  content: "\f105";
+}
+
+.previous {
+  width: 28px;
+  height: 28px;
+  border: none;
+  display: inline-block;
+  background: none;
+}
+
+.next {
+  width: 28px;
+  height: 28px;
+  border: none;
+  display: inline-block;
+  background: none;
+}
+
+/*=================================
+  clients styling ends here
+=================================*/
+
+/*=================================
+  contact styling starts here
+=================================*/
+
+.contact-section {
+  min-height: 320px;
+  position: relative;
+}
+
+.contact-section figure {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+}
+
+.contact-section figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .8;
+}
+
+.contact-us-form { padding: 60px 0; }
+
+.contact-section h2 {
+  margin-bottom: 40px;
+  color: #fff;
+  font-size: 33px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contacts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-form-input {
+  margin-right: 30px;
+  width: 40%;
+}
+
+.details-form-input input,
+.input-textaria textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fff;
+  background-color: #646161;
+  color: #fff;
+  opacity: .5;
+}
+
+::placeholder { color: #fff; }
+.input-grp { margin-bottom: 23px; }
+.input-textaria { width: 60%; }
+
+.submit-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-btn input {
+  padding: 13px 25px;
+  border: none;
+  background-color: #DB6326;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/*=================================
+  contact styling ends here
+=================================*/
+
+/*=================================
+  footer styling starts here
+=================================*/
+
+.footer-top {
+  padding: 100px 0;
+  background-color: #515B64;
+}
+
+.footer-top .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-background {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  display: inline-block;
+  background-color: #DC6226;
+}
+
+.location-icon::before {
+  padding: 17px 21px;
+  color: #fff;
+  font-size: 30px;
+  content: "\f3c5";
+}
+
+.footer-top address {
+  display: flex;
+  align-items: center;
+}
+
+.footer-top address a,
+.mail a,
+.phone a { color: #fff; }
+
+.mail,
+.phone {
+  display: flex;
+  align-items: center;
+}
+
+.footer-top address { flex-basis: 50%; }
+
+.phone { flex-basis: 50%; }
+
+.mail {
+  flex-basis: 50%;
+  margin-right: 20px;
+}
+
+.e-mail-icon::before {
+  padding: 19px;
+  color: #fff;
+  font-size: 24px;
+  content: "\f0e0";
+}
+
+.phone-icon::before {
+  padding: 19px;
+  color: #fff;
+  font-size: 24px;
+  content: "\f095";
+}
+
+.call-us {
+  display: block;
+  color: #fff;
+}
+
+.grey-background {
+  width: 90px;
+  height: 90px;
+  padding: 13px;
+  border-radius: 50%;
+  margin-right: 20px;
+  background-color: #6D717C;
+  text-align: center;
+}
+
+.footer-bottom {
+  padding: 70px 0 140px;
+  background-color: #404950;
+}
+
+.footer-bottom .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright h3 { display: inline-block; }
+
+.copyright a {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.copyright span {
+  color: #fff;
+  font-size: 14px;
+}
+
+.footer-icon-list { margin-top: 15px; }
+.mt-size::before { font-size: 30px; }
+.footer-icon-list li:not(:last-child) { margin-right: 23px; }
+.footer-right img { width: 100%; }
+
+/*=================================
+  footer styling ends here
+=================================*/
+
+/*=================================
+  media query for 995 above starts here
+=================================*/
+
+@media only screen and (min-width: 995px) {
+  
+  .dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .dropdown-content {
+    min-width: 160px;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+
+  .dropdown-content li { display: block; }
+  
+  .dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+    color: #000;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  .dropdown:hover .dropdown-content {display: block;}
+
+  .header-nav-links a:hover,
+  .twitter:hover::before,
+  .youtube:hover::before,
+  .rfi:hover::before,
+  .facebook:hover::before,
+  .google-plus:hover::before,
+  .more-icon:hover::before { color: #DB6326; }
+
+  .prev,
+  .previous { transition: 0.3s ease-in-out; }
+
+  .prev:hover,
+  .previous:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+  }
+
+  .nxt,
+  .next { transition: 0.3s ease-in-out; }
+
+  .nxt:hover,
+  .next:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+  }
+
+  .read-more:hover {
+    border: 1px solid #fff;
+    background-color: #414B52;
+    color: #fff;
+  }
+
+  .read-learn-border:hover {
+    background-color: #fff;
+    color: #DB6326;
+  }
+
+  .hover-ef:hover {
+    background-color: #fff;
+    color: #414A53;
+  }
+
+  .submit-btn { transition: 0.3s ease-in-out; }
+
+  .submit-btn input:hover {
+    background-color: #fff;
+    color: #DB6326;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+  }
+
+  .copyright a:hover { color: #DB6326; }
+
+}
+
+
+@media only screen and (max-width: 995px) {
+
+  .navbar { display: none; }
+
+  .hamberger-icon::before {
+    color: #808C94;
+    font-size: 24px;
+    content: "\f0c9";
+  }
+
+  .hamberger-icon { display: inline-block; }
+  .footer-top address a, .mail a { margin-right: 10px; }
+  .clients-logo li:nth-child(n+5) { display: none; }
+  .footer-top address a, .mail a, .phone a, .call-us { font-size: 13px;}
+
+}
+
+/*=================================
+  media query for 995 above ends here
+=================================*/
+
+/*=================================
+  media query for 768 starts here
+=================================*/
+
+@media only screen and (max-width: 768px) {
+
+  .twitter::before,
+  .youtube::before,
+  .rfi::before,
+  .facebook::before,
+  .google-plus::before,
+  .hamberger-icon::before { font-size: 22px; }
+  .flex li a { width: 20px; }
+
+  .banner-detail {
+    padding: 12px 50px;
+    width: 800px;
+  }
+
+  .banner-detail h1 { font-size: 20px; }
+  .prev::before,
+  .nxt::before { font-size: 22px; }
+  .home-section { padding: 50px 0; }
+
+  .home-section h2,
+  .services-section h2 {
+    margin-bottom: 38px;
+    font-size: 25px;
+  }
+
+  .card::before,
+  .graph::before,
+  .money-bag::before,
+  .money-saving::before {
+    padding: 14px;
+    font-size: 20px;
+  }
+
+  .icon-background {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tips-description h3 a { font-size: 15px; }
+  .home-section p { font-size: 12px; }
+
+  .read-more {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .services-section { padding: 60px 0; }
+  .service-top p { font-size: 15px; }
+  .service-bottom { flex-wrap: wrap; }
+
+  .service-bottom .service-article:not(:last-child) {
+    margin-right: 25px;
+    margin-bottom: 30px;
+    flex-basis: 45%;
+  }
+
+  .service-bottom .service-article:nth-child(2) { margin-right: 0; }
+
+  .service-article h3 a {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .service-article p { font-size: 12px; }
+  .tips-description { flex-wrap: wrap; }
+  .tips-description li { margin-bottom: 20px; }
+
+  .fresh-investment h3,
+  .save-money h3 { font-size: 20px; }
+  .gear-icon::before { font-size: 8px; }
+
+  .gear-icon,
+  .save-money p { font-size: 12px; }
+
+  .read-learn-border {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .save-money { padding-left: 50px; }
+
+  .clients-logo {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .clients-logo li { flex-basis: 20%; }
+
+  .previous::before,
+  .next::before { font-size: 20px; }
+
+  .location-icon::before,
+  .e-mail-icon::before,
+  .phone-icon::before {
+    padding: 14px 16px;
+    font-size: 20px;
+  }
+
+  .grey-background {
+    width: 70px;
+    height: 70px;
+    padding: 9px;
+  }
+
+  .contact-section h2 { font-size: 24px; }
+  .contact-us-form { padding: 34px 28px; }
+  .footer-top .wrapper { flex-wrap: wrap; }
+  .footer-top address { flex-basis: 40%; }
+  .phone { flex-basis: 50%; }
+
+  .mail {
+    margin-bottom: 20px;
+    flex-basis: 60%;
+  }
+
+  .footer-top { padding: 70px 0; }
+
+  .footer-bottom .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-left {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .copyright a { font-size: 27px; }
+  .mt-size::before { font-size: 26px; }
+  .header-container img { width: 70%; }
+  .footer-top address { margin-bottom: 20px; }
+  .clients-section { padding: 30px 0; }
+
+  .submit-btn input {
+    padding: 14px 22px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .copyright span { font-size: 11px; }
+
+  .footer-bottom { padding: 63px 0 100px; }
+
+}
+
+/*=================================
+  media query for 768 ends here
+=================================*/
+
+/*=================================
+  media query for 640 starts here
+=================================*/
+
+@media only screen and (max-width: 640px) {
+
+  .twitter::before,
+  .youtube::before,
+  .rfi::before,
+  .facebook::before,
+  .google-plus::before,
+  .hamberger-icon::before { font-size: 20px; }
+
+  .flex li a { width: 12px; }
+  .banner-detail h1 { font-size: 17px; }
+  .service-bottom .service-article:first-child { margin-right: 25px; }
+
+  .tips-description li {
+    margin-bottom: 20px;
+    flex-basis: 50%;
+  }
+
+  .d-flex {
+    padding: 34px 0;
+    flex-direction: column;
+  }
+
+  .save-money {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .fresh-investment {
+    width: 100%;
+    margin-bottom: 70px;
+  }
+
+  .investment-section { background: linear-gradient(to bottom, #DB6326 50%, #414A53 50%); }
+  .footer-top .wrapper { flex-direction: column; }
+  .footer-top address { margin-bottom: 20px; }
+  .mail { margin-bottom: 20px; }
+  .footer-top { padding: 55px 0; }
+  .clients-section { padding: 20px 0; }
+
+  .submit-btn input {
+    padding: 12px 22px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .footer-bottom { padding: 56px 0 80px; }
+
+}
+
+/*=================================
+  media query for 640 ends here
+=================================*/
+
+/*=================================
+  media query for 480 starts here
+=================================*/
+
+@media only screen and (max-width: 480px) {
+
+  .twitter::before,
+  .youtube::before,
+  .rfi::before,
+  .facebook::before,
+  .google-plus::before,
+  .hamberger-icon::before { font-size: 16px; }
+
+  .flex {
+    display: flex;
+    justify-content: end;
+    flex-basis: 60%;
+  }
+
+  .flex li a { width: 10px; }
+  .service-top p { font-size: 13px; }
+
+  .service-article h3 a,
+  .fresh-investment h3,
+  .save-money h3 { font-size: 17px; }
+
+  .banner-detail h1,
+  .prev::before,
+  .nxt::before { font-size: 14px; }
+  .tips-description,
+  .service-bottom { flex-direction: column; }
+
+  .home-section h2,
+  .services-section h2 {
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+
+  .service-bottom .service-article:first-child { margin-right: 0; }
+  .gear-icon::before { font-size: 8px; }
+
+  .gear-icon,
+  .gear-icon,
+  .save-money p { font-size: 12px; }
+
+  .read-learn-border {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .clients-logo li { flex-basis: 20%; }
+
+  .previous::before,
+  .next::before { font-size: 15px; }
+  .footer-top { padding: 40px 0; }
+  .header-container img { width: 50%; }
+  .contacts { flex-direction: column; }
+ 
+  .input-textaria,
+  .details-form-input { width: 100%; }
+
+  .clients-section { padding: 10px 0; }
+
+  .submit-btn input {
+    padding: 9px 18px;
+    margin-top: 10px;
+    font-size: 9px;
+    font-weight: 700;
+  }
+
+  .copyright a { font-size: 22px; }
+  .footer-bottom { padding: 50px 0 70px; }
+  .clients-logo li:nth-child(n+4) { display: none; }
+  .contact-section h2 { font-size: 18px; }
+  .service-article img { width: 90%; }
+  .service-bottom a { text-align: center; }
+  
+}
+
+/*=================================
+  media query for 480 ends here
+=================================*/
